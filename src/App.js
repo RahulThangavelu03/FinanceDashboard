@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import "./index.css"
 import './App.css';
+import { Button } from '@mui/material';
+
+import Signup from './Components/SignUp';
+import Dashboard from './Components/Dashboard';
+import Login from './Components/Login';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+<BrowserRouter>
+
+<Routes>
+
+<Route path="/" element={<Signup></Signup>}></Route>
+<Route path="/Login" element={<Login></Login>}></Route>
+<Route path="/dashboard" element={<Dashboard/>}></Route>
+
+</Routes>
+
+</BrowserRouter>
+
+
+
     </div>
   );
 }
