@@ -1,37 +1,54 @@
 import React, { useState } from 'react';
-import { supabase } from '../SupaBase/Supabase';
 import { useNavigate, Link } from 'react-router-dom';
+import { useSignUp } from "@clerk/clerk-react";
 import {
   Container,
   TextField,
   Button,
   Typography,
   Box,
-  Paper
+  Paper,
+  CircularProgress
 } from '@mui/material';
 
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { signUp, setActive } = useSignUp();
+  const [loading,setLoading]=useState(false)
+
+const [error,setError]=useState("")
 
   const handleSignup = async (e) => {
     e.preventDefault();
-
+        setError("");
+setLoading(true)
     try {
-      const { error } = await supabase.auth.signUp({ email, password });
-      if (error) alert(error.message);
-      else {
-        alert('Signup successful! Check your email.');
-        navigate('/dashboard');
-      }
-    } catch (err) {
-      console.error('Signup Error:', err);
+    const result = await signUp.create({
+        emailAddress: email,
+        password,
+        
+      });
+
+      if (result.status === "complete") {
+        await setActive({ session: result.createdSessionId });
+
+        navigate("/dashboard");
+    }} catch (err) {
+      setError(err.errors[0]?.message || "Signup failed");
+    }
+    finally {
+      setLoading(false); 
     }
   };
+  
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="xs"  sx={{
+    mx: "auto",                   
+    px: { xs: 2, sm: 3, md: 4 },  
+  }}>
       <Paper elevation={3} sx={{ p: 4, mt: 6 }}>
         <Typography variant="h5" component="h2" gutterBottom sx={{ textAlign: 'center' }}>
           Sign Up
@@ -58,13 +75,14 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+           {error && <Typography color="error">{error}</Typography>}
           <Button
             type="submit"
             variant="contained"
-            fullWidth
-            sx={{ mt: 2, backgroundColor: '#1976d2' }}
+            fullWidth 
+            sx={{ mt: 2, backgroundColor: '#1976d2' }} disabled={loading}
           >
-            Sign Up
+                  {loading ? <CircularProgress size={24} color="inherit" /> : "Sign Up"}
           </Button>
         </Box>
 

@@ -38,9 +38,12 @@ function Transaction() {
         borderRadius: 2,
         boxShadow: 2,
         bgcolor: "#fff",
-        maxWidth: 700,
+        maxWidth: 800,
         width: "100%",
-        ml: 2,
+        marginRight:"5px",
+        ml: 1,
+        mx: "auto",         
+    px: { xs: 2, sm: 3, md: 4 }, 
       }}
     >
       <Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>
@@ -81,7 +84,8 @@ function Transaction() {
                 <TableRow key={txn.id} hover>
                   <TableCell>{txn.title}</TableCell>
                   <TableCell>
-                    {txn.type === "income" ? "+" : "-"} ₹{txn.amount.toLocaleString()}
+                     {txn.type === "income" ? "+" : "-"} ₹{txn.amount.toLocaleString()} 
+                
                   </TableCell>
                   <TableCell sx={{ textTransform: "capitalize" }}>{txn.type}</TableCell>
                   <TableCell>{txn.category}</TableCell>
@@ -97,7 +101,7 @@ function Transaction() {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={5} align="center" sx={{ py: 3, color: "gray" }}>
+                <TableCell colSpan={5} align="center" sx={{ py: 1.5, color: "gray", fontWeight: 300 }}>
                   No transactions found.
                 </TableCell>
               </TableRow>

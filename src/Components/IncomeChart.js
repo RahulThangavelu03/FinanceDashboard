@@ -20,7 +20,12 @@ function IncomeChart() {
     }));
 
   return (
-    <div className="p-4 border rounded shadow w-full md:min-w-[550px] md:max-w-[750px] mx-auto">
+    <div className="  w-full
+        max-w-[650px]        
+        mx-auto              
+        px-4 sm:px-6 md:px-8 
+        py-4
+      ">
       <h2 className="text-lg font-semibold mb-2">Income Overview</h2>
       {incomeData.length === 0 ? (
         <p className="text-gray-500">No income data to display.</p>

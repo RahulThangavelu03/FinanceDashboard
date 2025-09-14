@@ -18,6 +18,8 @@ function AddTransactionComponent() {
   const [type, setType] = useState("income");
   const [category, setCategory] = useState("");
 
+  const [menuItem,setMenuItem]=useState(["Salary","Rent","Returns","Business","Others"])
+
   const dispatch = useDispatch();
 
   const handleAddTransaction = (e) => {
@@ -39,17 +41,39 @@ function AddTransactionComponent() {
     setCategory("");
   };
 
+
+  function HandleMenuChange(e) {
+  const selectedType = e.target.value;
+  setType(selectedType);
+
+  if (selectedType === "income") {
+    setMenuItem(["Salary", "Rent", "Returns", "Business","Others"]);
+  } else {
+    setMenuItem(["Food", "Grocery", "Travel", "Rent", "Others"]);
+  }
+
+  setCategory(""); 
+}
+
+
+
+
   return (
+
     <Paper
       elevation={3}
       sx={{
         p: 4,
-        maxWidth: 700,
-        width: "100%",         
+        maxWidth: 650,
+        width: "85%",         
         mt: 4,
         borderRadius: 3,
-        ml: 2,                
-        boxSizing: "border-box"
+             
+         ml:"-5px",    
+        boxSizing: "border-box",
+            
+          minHeight: 300,     
+    px: { xs: 2, sm: 3, md: 4 }, 
       }}
     >
       <h2 style={{ fontSize: "1.2rem", fontWeight: "600", marginBottom: "1rem" }}>
@@ -58,10 +82,11 @@ function AddTransactionComponent() {
 
       <form onSubmit={handleAddTransaction}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
               label="Title"
+              type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               size="small"
@@ -79,26 +104,54 @@ function AddTransactionComponent() {
             />
           </Grid>
 
-          <Grid item xs={12} sm={4}>
-            <FormControl fullWidth size="small" sx={{ minWidth: 200 }}>
-              <InputLabel id="category-label">Category</InputLabel>
+
+
+
+
+            <Grid item xs={12}>
+            <FormControl fullWidth size="small">
+              <InputLabel id="type-label">Type</InputLabel>
               <Select
-                labelId="category-label"
-                id="category"
-                value={category}
-                label="Category"
-                onChange={(e) => setCategory(e.target.value)}
-                MenuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
+                labelId="type-label"
+                value={type}
+                label="Type"
+                onChange={HandleMenuChange}
               >
-                <MenuItem value="Food">Food</MenuItem>
-                <MenuItem value="Utilities">Utilities</MenuItem>
-                <MenuItem value="Entertainment">Entertainment</MenuItem>
-                <MenuItem value="Transport">Transport</MenuItem>
-                <MenuItem value="Other">Other</MenuItem>
+                <MenuItem value="income">Income</MenuItem>
+                <MenuItem value="expense">Expense</MenuItem>
               </Select>
             </FormControl>
           </Grid>
 
+
+          <Grid item xs={12} sm={4}>
+            <FormControl fullWidth size="small" sx={{ minWidth: 200 }}>
+              <InputLabel id="category-label">Category</InputLabel>
+            
+<Select
+  labelId="category-label"
+  id="category"
+  value={category}
+  label="Category"
+  onChange={(e) => setCategory(e.target.value)}
+  MenuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
+>
+  {menuItem.map((data, index) => (
+    <MenuItem key={index} value={data}>
+      {data}
+    </MenuItem>
+  ))}
+</Select>
+
+
+
+
+
+
+
+            </FormControl>
+          </Grid>
+{/* 
           <Grid item xs={12}>
             <FormControl fullWidth size="small">
               <InputLabel id="type-label">Type</InputLabel>
@@ -106,13 +159,13 @@ function AddTransactionComponent() {
                 labelId="type-label"
                 value={type}
                 label="Type"
-                onChange={(e) => setType(e.target.value)}
+                onChange={HandleMenuChange}
               >
                 <MenuItem value="income">Income</MenuItem>
                 <MenuItem value="expense">Expense</MenuItem>
               </Select>
             </FormControl>
-          </Grid>
+          </Grid> */}
 
           <Grid item xs={12}>
             <Button

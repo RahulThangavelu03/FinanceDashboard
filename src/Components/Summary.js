@@ -29,8 +29,10 @@ function Summary() {
   ];
 
   return (
-    <Box sx={{ px: 0, mx: 0, width: '100%' }}>
-      <Grid container spacing={3}>
+    <Box sx={{ px: 0,  width: '100%'  ,mx: "auto",             
+    px: { xs: 2, sm: 3, md: 4 }, }}>
+      <Grid container spacing={3}   justifyContent="space-around" 
+  alignItems="stretch">
         {summaryItems.map((item, index) => (
           <Grid item xs={12} md={4} key={index}>
             <Paper

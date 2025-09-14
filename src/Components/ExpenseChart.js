@@ -49,10 +49,15 @@ function ExpenseChart() {
     }));
 
   return (
-    <div className="p-4 border rounded shadow w-full md:min-w-[500px] md:max-w-[700px]">
+    <div className="  w-full
+        max-w-[650px]   
+        mx-auto              
+        px-4 sm:px-6 md:px-8 
+        py-4
+      ">
       <h2 className="text-lg font-semibold mb-2">Expense Breakdown</h2>
       {expenseData.length === 0 ? (
-        <p className="text-gray-500">No expense data to display.</p>
+        <p className="text-gray-500" >No expense data to display.</p>
       ) : (
         <ResponsiveContainer width="100%" height={300}>
           <PieChart>
