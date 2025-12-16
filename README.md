@@ -12,8 +12,8 @@ A responsive finance dashboard built using React to display and organize financi
 - React
 - JavaScript (ES6)
 - CSS(Material UI)
--Redux
 - Netlify
+- Redux
 
 ## Live Demo
 https://financedashhboard.netlify.app/
