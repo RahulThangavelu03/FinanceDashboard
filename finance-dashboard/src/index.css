@@ -1,0 +1,30 @@
+/* .NavBar{
+
+
+
+  height:70px;
+  width:100%;
+
+  display:flex;
+
+  justify-content:space-between;
+  align-items:center;
+
+  padding-left:40px;
+  padding-right:40px;
+
+  border-bottom:1px solid #e5e7eb;
+
+
+}
+.logo{
+  font-size:20px;
+  font-weight:600;
+}
+
+ */
+
+
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
