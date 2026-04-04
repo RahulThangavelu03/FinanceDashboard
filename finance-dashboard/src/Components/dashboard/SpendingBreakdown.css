@@ -1,0 +1,8 @@
+.legend-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.recharts-legend-item {
+  margin-bottom: 0.25rem !important;
+}
