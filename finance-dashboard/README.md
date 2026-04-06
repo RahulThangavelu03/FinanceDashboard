@@ -1,16 +1,50 @@
-# React + Vite
+# Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive Finance Dashboard built using React that helps users track income and expenses, visualize spending patterns, and view useful financial insights.
 
-Currently, two official plugins are available:
+This project demonstrates component-based architecture, state management, and chart visualization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Track income and expenses
+- View total balance, total income, and total expenses
+- Identify highest spending category
+- View monthly income vs expense comparison chart
+- Calculate savings rate
+- View average expense per transaction
+- Role-based UI (Viewer / Admin simulation)
+- Responsive design
+- Indian currency format (₹)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React (Vite)
+- Redux Toolkit
+- Recharts
+- React Icons
+- CSS
+
+---
+
+## How to Setup and Run the Project
+
+Follow the steps below to run this project from the Git repository.
+
+---
+
+### 1. Clone the repository
+
+git clone https://github.com/RahulThangavelu03/FinanceDashboard
+cd finance-dashboard
+
+### 2. Install dependencies
+
+npm install
+
+### 3. Run the App
+
+npm run dev
