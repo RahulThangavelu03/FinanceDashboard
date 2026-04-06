@@ -19,7 +19,8 @@ import {
 
 import { categoryColors } from '../../data/mockData'
 import Card from '../Common/Card'
-import { FiTrendingUp, FiTrendingDown, FiDollarSign, FiPieChart } from 'react-icons/fi'
+import { FiTrendingUp, FiTrendingDown,FiPieChart } from 'react-icons/fi'
+import { FaRupeeSign } from "react-icons/fa"
 import './InsightsPanel.css'
 
 const InsightsPanel = () => {
@@ -99,7 +100,7 @@ const InsightsPanel = () => {
 
         <Card className="insight-card">
           <div className="insight-icon savings">
-            <FiDollarSign />
+            < FaRupeeSign />
           </div>
           <div className="insight-content">
             <span className="insight-label">Savings Rate</span>
@@ -125,7 +126,7 @@ const InsightsPanel = () => {
 
         <Card className="insight-card">
           <div className="insight-icon average">
-            <FiDollarSign />
+            <FaRupeeSign />
           </div>
           <div className="insight-content">
             <span className="insight-label">Avg. Expense</span>

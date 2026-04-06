@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
-import { FiDollarSign, FiTrendingUp, FiTrendingDown, FiActivity } from 'react-icons/fi'
+import {FiTrendingUp, FiTrendingDown, FiActivity  } from 'react-icons/fi'
+import { FaRupeeSign } from "react-icons/fa"
 import { calculateTotals, formatCurrency } from '../../utils/helper'
 import './SummaryCards.css'
 
@@ -11,7 +12,7 @@ const SummaryCards = () => {
     {
       label: 'Total Balance',
       value: balance,
-      icon: FiDollarSign,
+      icon: FaRupeeSign,
       color: balance >= 0 ? 'success' : 'danger',
       trend: balance >= 0 ? '+' : '',
     },

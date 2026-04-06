@@ -1,34 +1,41 @@
+
 export const formatCurrency = (amount) => {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-IN', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'INR'
   }).format(amount)
 }
 
+
 export const formatDate = (dateString) => {
   const date = new Date(dateString)
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
-    month: 'short',
+  return new Intl.DateTimeFormat('en-IN', {
     day: 'numeric',
+    month: 'short',
+    year: 'numeric',
   }).format(date)
 }
+
+
 
 export const formatDateShort = (dateString) => {
   const date = new Date(dateString)
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
+  return new Intl.DateTimeFormat('en-IN', {
     day: 'numeric',
+    month: 'short',
   }).format(date)
 }
 
+
+
 export const getMonthYear = (dateString) => {
   const date = new Date(dateString)
-  return new Intl.DateTimeFormat('en-US', {
-    year: 'numeric',
+  return new Intl.DateTimeFormat('en-IN', {
     month: 'short',
+    year: 'numeric',
   }).format(date)
 }
+
 
 export const calculateTotals = (transactions) => {
   return transactions.reduce(

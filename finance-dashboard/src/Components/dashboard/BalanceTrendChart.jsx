@@ -70,7 +70,7 @@ const BalanceTrendChart = () => {
             <YAxis 
               stroke={theme === 'dark' ? '#64748b' : '#94a3b8'}
               tick={{ fontSize: 12 }}
-              tickFormatter={(value) => `$${value}`}
+              tickFormatter={(value) => `${value}`}
             />
             <Tooltip content={<CustomTooltip />} />
             <Area 
