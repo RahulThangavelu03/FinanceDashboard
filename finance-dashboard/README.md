@@ -39,6 +39,9 @@ Follow the steps below to run this project from the Git repository.
 ### 1. Clone the repository
 
 git clone https://github.com/RahulThangavelu03/FinanceDashboard
+
+## Navigate to the Path
+
 cd finance-dashboard
 
 ### 2. Install dependencies
