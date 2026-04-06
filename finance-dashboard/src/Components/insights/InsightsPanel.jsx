@@ -17,56 +17,83 @@ import {
   calculateTotals 
 } from '../../utils/helper'
 
-import { categoryColors } from '../../data/mockData'
 import Card from '../Common/Card'
 import { FiTrendingUp, FiTrendingDown,FiPieChart } from 'react-icons/fi'
 import { FaRupeeSign } from "react-icons/fa"
 import './InsightsPanel.css'
 
+
 const InsightsPanel = () => {
+
   const transactions = useSelector((state) => state.transactions.items)
   const theme = useSelector((state) => state.theme.mode)
 
-  const insights = useMemo(() => {
-    const totals = calculateTotals(transactions)
-    const categoryData = groupByCategory(transactions)
-    const monthlyData = getMonthlyComparison(transactions)
 
-    // Highest spending category
-    const highestCategory = categoryData[0] || { name: 'N/A', value: 0 }
+  const totals = calculateTotals(transactions)
+  const categoryData = groupByCategory(transactions)
+  const monthlyData = getMonthlyComparison(transactions)
 
-    // Monthly comparison
-    const currentMonth = monthlyData[monthlyData.length - 1] || { expenses: 0, income: 0 }
-    const previousMonth = monthlyData[monthlyData.length - 2] || { expenses: 0, income: 0 }
-    
-    const expenseChange = previousMonth.expenses > 0 
-      ? ((currentMonth.expenses - previousMonth.expenses) / previousMonth.expenses * 100).toFixed(1)
+
+  // Highest spending category
+  const highestCategory = categoryData[0] || { name: 'N/A', value: 0 }
+
+
+  // Monthly comparison
+  const currentMonth =
+    monthlyData[monthlyData.length - 1] || { expenses: 0, income: 0 }
+
+  const previousMonth =
+    monthlyData[monthlyData.length - 2] || { expenses: 0, income: 0 }
+
+
+  const expenseChange =
+    previousMonth.expenses > 0
+      ? (
+          (currentMonth.expenses - previousMonth.expenses) /
+          previousMonth.expenses *
+          100
+        ).toFixed(1)
       : 0
 
-    const incomeChange = previousMonth.income > 0
-      ? ((currentMonth.income - previousMonth.income) / previousMonth.income * 100).toFixed(1)
+
+  const incomeChange =
+    previousMonth.income > 0
+      ? (
+          (currentMonth.income - previousMonth.income) /
+          previousMonth.income *
+          100
+        ).toFixed(1)
       : 0
 
-    // Average transaction
-    const avgTransaction = transactions.length > 0
-      ? totals.expenses / transactions.filter(t => t.type === 'expense').length
+
+  // Average expense transaction
+  const expenseTransactions =
+    transactions.filter((t) => t.type === 'expense')
+
+  const avgTransaction =
+    expenseTransactions.length > 0
+      ? totals.expenses / expenseTransactions.length
       : 0
 
-    // Savings rate
-    const savingsRate = totals.income > 0 
+
+  // Savings rate
+  const savingsRate =
+    totals.income > 0
       ? ((totals.income - totals.expenses) / totals.income * 100).toFixed(1)
       : 0
 
-    return {
-      highestCategory,
-      expenseChange,
-      incomeChange,
-      avgTransaction,
-      savingsRate,
-      monthlyData,
-      totalTransactions: transactions.length,
-    }
-  }, [transactions])
+
+  const insights = {
+    highestCategory,
+    expenseChange,
+    incomeChange,
+    avgTransaction,
+    savingsRate,
+    monthlyData,
+    totalTransactions: transactions.length,
+  }
+
+
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
@@ -151,11 +178,11 @@ const InsightsPanel = () => {
                 tick={{ fontSize: 12 }}
               />
               <YAxis 
-                stroke={theme === 'dark' ? '#64748b' : '#94a3b8'}
+                 stroke={theme === 'dark' ? '#64748b' : '#94a3b8'}
                 tick={{ fontSize: 12 }}
-                tickFormatter={(value) => `$${value}`}
+                tickFormatter={(value) => `${value}`}
               />
-              <Tooltip content={<CustomTooltip />} />
+              <Tooltip content={<CustomTooltip />} /> 
               <Legend />
               <Bar dataKey="income" name="Income" fill="#22c55e" radius={[4, 4, 0, 0]} />
               <Bar dataKey="expenses" name="Expenses" fill="#ef4444" radius={[4, 4, 0, 0]} />

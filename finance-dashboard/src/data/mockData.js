@@ -2,7 +2,7 @@ export const mockTransactions = [
 
   {
     id: '1',
-    date: '2024-03-31',
+    date: '2026-03-31',
     description: 'Salary Credit',
     amount: 65000,
     type: 'income',
@@ -11,7 +11,7 @@ export const mockTransactions = [
 
   {
     id: '2',
-    date: '2024-03-30',
+    date: '2026-03-30',
     description: 'Freelance Web Project',
     amount: 12000,
     type: 'income',
@@ -20,7 +20,7 @@ export const mockTransactions = [
 
   {
     id: '3',
-    date: '2024-03-29',
+    date: '2026-03-29',
     description: 'House Rent',
     amount: 18000,
     type: 'expense',
@@ -29,7 +29,7 @@ export const mockTransactions = [
 
   {
     id: '4',
-    date: '2024-03-28',
+    date: '2026-03-28',
     description: 'Swiggy Order',
     amount: 450,
     type: 'expense',
@@ -38,7 +38,7 @@ export const mockTransactions = [
 
   {
     id: '5',
-    date: '2024-03-27',
+    date: '2026-03-27',
     description: 'Electricity Bill',
     amount: 2200,
     type: 'expense',
@@ -47,7 +47,7 @@ export const mockTransactions = [
 
   {
     id: '6',
-    date: '2024-03-26',
+    date: '2026-03-26',
     description: 'Petrol Pump',
     amount: 3000,
     type: 'expense',
@@ -56,7 +56,7 @@ export const mockTransactions = [
 
   {
     id: '7',
-    date: '2024-03-25',
+    date: '2026-03-25',
     description: 'Zomato Dinner',
     amount: 650,
     type: 'expense',
@@ -65,7 +65,7 @@ export const mockTransactions = [
 
   {
     id: '8',
-    date: '2024-03-24',
+    date: '2026-03-24',
     description: 'Mutual Fund SIP',
     amount: 5000,
     type: 'expense',
@@ -74,7 +74,7 @@ export const mockTransactions = [
 
   {
     id: '9',
-    date: '2024-03-23',
+    date: '2026-03-23',
     description: 'Amazon Shopping',
     amount: 3200,
     type: 'expense',
@@ -83,7 +83,7 @@ export const mockTransactions = [
 
   {
     id: '10',
-    date: '2024-03-22',
+    date: '2026-03-22',
     description: 'Mobile Recharge',
     amount: 719,
     type: 'expense',
@@ -92,7 +92,7 @@ export const mockTransactions = [
 
   {
     id: '11',
-    date: '2024-03-21',
+    date: '2026-03-21',
     description: 'Movie Night',
     amount: 550,
     type: 'expense',
@@ -101,7 +101,7 @@ export const mockTransactions = [
 
   {
     id: '12',
-    date: '2024-03-20',
+    date: '2026-03-20',
     description: 'Gym Membership',
     amount: 1800,
     type: 'expense',
@@ -110,7 +110,7 @@ export const mockTransactions = [
 
   {
     id: '13',
-    date: '2024-03-18',
+    date: '2026-03-18',
     description: 'Bonus Credit',
     amount: 15000,
     type: 'income',
@@ -119,7 +119,7 @@ export const mockTransactions = [
 
   {
     id: '14',
-    date: '2024-03-15',
+    date: '2026-03-15',
     description: 'Ola Ride',
     amount: 320,
     type: 'expense',
@@ -128,7 +128,7 @@ export const mockTransactions = [
 
   {
     id: '15',
-    date: '2024-03-14',
+    date: '2026-03-14',
     description: 'Flipkart Purchase',
     amount: 2100,
     type: 'expense',
@@ -137,7 +137,7 @@ export const mockTransactions = [
 
   {
     id: '16',
-    date: '2024-03-12',
+    date: '2026-03-12',
     description: 'Internet Bill',
     amount: 999,
     type: 'expense',
@@ -146,7 +146,7 @@ export const mockTransactions = [
 
   {
     id: '17',
-    date: '2024-03-10',
+    date: '2026-03-10',
     description: 'Doctor Visit',
     amount: 800,
     type: 'expense',
@@ -155,7 +155,7 @@ export const mockTransactions = [
 
   {
     id: '18',
-    date: '2024-03-08',
+    date: '2026-03-08',
     description: 'Online Course (Udemy)',
     amount: 499,
     type: 'expense',
@@ -164,7 +164,7 @@ export const mockTransactions = [
 
   {
     id: '19',
-    date: '2024-03-05',
+    date: '2026-03-05',
     description: 'Dividend Credit',
     amount: 2500,
     type: 'income',
@@ -173,7 +173,7 @@ export const mockTransactions = [
 
   {
     id: '20',
-    date: '2024-03-01',
+    date: '2026-03-01',
     description: 'LIC Insurance Premium',
     amount: 3500,
     type: 'expense',
