@@ -4,7 +4,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState: {
     role: localStorage.getItem('userRole') || 'viewer',
-    name: 'John Doe',
+    name: 'Rohan',
   },
   reducers: {
     setRole: (state, action) => {

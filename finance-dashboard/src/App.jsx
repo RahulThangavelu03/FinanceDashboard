@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
- import Layout from './components/Layout/Layout'
+import Layout from './Components/Layout/Layout'
 
 import Dashboard from './pages/Dashboard'
 import Transactions from './pages/Transactions'
